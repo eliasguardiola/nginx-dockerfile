@@ -1,14 +1,18 @@
-# Use a lightweight Debian image as the base
-FROM debian:bookworm-slim
+# Use the official Nginx image from Docker Hub
+FROM nginx:latest
 
-# Update the package lists
-RUN apt-get update && apt-get install -y nginx
+# Copy custom Nginx configuration file (optional)
+# COPY nginx.conf /etc/nginx/nginx.conf
 
-# Copy the default Nginx configuration file
-COPY nginx.conf /etc/nginx/nginx.conf
+# Copy your website content (e.g., HTML files) to the Nginx server's default content directory
+COPY ./html /usr/share/nginx/html
 
-# Expose port 80 for HTTP traffic
+# Expose port 80 (HTTP) and 443 (HTTPS)
 EXPOSE 80
+EXPOSE 443
 
-# Start Nginx when the container starts
+# Optional: Set environment variables (if needed)
+# ENV NGINX_HOST=localhost
+
+# Default command to run Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
