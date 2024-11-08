@@ -1,5 +1,5 @@
 # Use the official Nginx image from Docker Hub
-FROM nginx:latest
+FROM nginx:stable-perl
 
 # Copy custom Nginx configuration file (optional)
 # COPY nginx.conf /etc/nginx/nginx.conf
