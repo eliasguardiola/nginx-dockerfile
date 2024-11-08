@@ -1,5 +1,5 @@
 # Use a lightweight Debian image as the base
-FROM debian:slim-buster
+FROM debian:bookworm-slim
 
 # Update the package lists
 RUN apt-get update && apt-get install -y nginx
