@@ -1,5 +1,5 @@
 # Use the Bitnami NGINX image as a base
-FROM image-registry.openshift-image-registry.svc:5000/pruebas-funcional/nginx:latest
+FROM pruebas-funcional/nginx:latest
 
 # Expose the port that NGINX will listen on
 EXPOSE 8080
