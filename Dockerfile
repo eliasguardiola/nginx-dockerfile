@@ -1,5 +1,5 @@
 # Use the Bitnami NGINX image as a base
-FROM pruebas-funcional/nginx:latest
+FROM internal-registry.apps.dr-uat.imss.gob.mx/pruebas-funcional/nginx
 
 # Expose the port that NGINX will listen on
 EXPOSE 8080
